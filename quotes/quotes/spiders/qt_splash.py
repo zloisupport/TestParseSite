@@ -23,6 +23,6 @@ class QtSplashSpider(scrapy.Spider):
         for quote in quotes:
             yield{
                 'author': quote.xpath(".//small[@class='author']/text()").get(),
-                'text': quote.xpath(".//span[@class'text']/text()").get(),
+                'text': quote.xpath(".//span[@class='text']/text()").get(),
                 'tags': quote.xpath(".//a[@class='tag']/text()").getall()
             }

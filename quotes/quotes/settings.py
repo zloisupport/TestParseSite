@@ -15,7 +15,7 @@ NEWSPIDER_MODULE = 'quotes.spiders'
 SPLASH_URL = 'http://localhost:8050'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'quotes (+http://www.yourdomain.com)'
-
+FEED_EXPORT_ENCODING = 'utf-8'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
