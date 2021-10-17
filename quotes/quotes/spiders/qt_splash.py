@@ -26,3 +26,9 @@ class QtSplashSpider(scrapy.Spider):
                 'text': quote.xpath(".//span[@class='text']/text()").get(),
                 'tags': quote.xpath(".//a[@class='tag']/text()").getall()
             }
+
+        next_page = response.xpath("//li[@class='next']/a/@href").get()
+        if next_page:
+            url = response.urljoin(next_page)
+            yield SplashRequest(url=url, callback=self.parse, endpoint='execute',
+                                args={'lua_source': self.script})
